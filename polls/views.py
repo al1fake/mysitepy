@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Question
 from django.template import loader
+from django.urls import include, path
 
 
 def index(request):
@@ -15,7 +16,7 @@ def index(request):
 def detail(request, question_id):
     latest_question_list = Question.objects.order_by('-pub_date')[:9]
     template = loader.get_template('polls/article.html')
-    context = {'latest_question_list': latest_question_list}
+    context = {'latest_question_list': latest_question_list, 'question_id': question_id}
     return render(request, 'polls/article.html', context)
 
 

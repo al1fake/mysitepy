@@ -13,10 +13,10 @@ class Question(models.Model):
 
     @property
     def preview(self):
-
         return self.article_text[:150] + '...'
 
-    def was_published_recently(self):
+    @property
+    def is_recently_published(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 
