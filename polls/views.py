@@ -1,3 +1,4 @@
+import django.urls
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Question
@@ -5,14 +6,17 @@ from django.template import loader
 
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    latest_question_list = Question.objects.order_by('-pub_date')[:9]
     template = loader.get_template('polls/index.html')
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
 
 
 def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+    latest_question_list = Question.objects.order_by('-pub_date')[:9]
+    template = loader.get_template('polls/article.html')
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/article.html', context)
 
 
 def results(request, question_id):

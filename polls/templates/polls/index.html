@@ -18,14 +18,28 @@
 <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <style>
+	
+		.centered {
+		  position: absolute;
+		  top: 29%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  font-size: 1.750rem;
+		  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+		  color: white;
+		}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
         -moz-user-select: none;
         user-select: none;
+		filter: blur(7px);
       }
-
+		a { 
+		text-decoration: none;
+		color: #6C757D;
+		}
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -90,23 +104,18 @@
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-
-
-
-
-
           {% for question in latest_question_list %}
 
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"  xmlns="http://www.w3.org/2000/svg" src="{{question.img_link}}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225"  xmlns="http://www.w3.org/2000/svg" src="{{question.img_link}}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></svg>
+			<div class="centered">{{question.header}}</div>
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">{{question.preview}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/polls/{{ question.id }}/">View</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/polls/{{ question.id }}/">Просмотреть</a></button>
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                 </div>
                 <small class="text-muted">{{question.pub_date}}</small>
               </div>
@@ -117,9 +126,6 @@
           {% endfor %}
 
         {% endif %}
-
-
-
 
 
 
