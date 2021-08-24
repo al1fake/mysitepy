@@ -1,0 +1,28 @@
+{% block content %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+    div {
+        width: 70%;
+    }
+		.centered {
+		  position: absolute;
+
+		  left: 30%;
+        }
+    </style>
+<!--Login-->
+<div class="centered">
+  <h1>Авторизация</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+      <br>
+    <button class="btn btn-primary" type="submit">Войти</button>
+  </form>
+  <p class="text-center">Нет аккаунта? <a href="/polls/register">Регистрация.</a></p>
+</div>
+
+{% endblock %}

@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4606e636-d38a-4d82-9715-fe3297a89055" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/polls/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/templatetags/filter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/templates/polls/basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/templates/polls/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/templates/polls/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/templates/polls/reg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polls/templates/polls/success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/mysite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysite.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/templates/polls/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/polls/article.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/templates/polls/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templates/polls/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/templatetags/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templatetags/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +49,34 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/mysite/settings.py" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="run" type="Python.DjangoServer" factoryName="Django server">
+      <module name="mysite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="mysite.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\User\AppData\Local\Microsoft\WindowsApps\python3.9.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -55,6 +89,21 @@
       <workItem from="1628168404515" duration="791000" />
       <workItem from="1628169632344" duration="2744000" />
       <workItem from="1628184407860" duration="3165000" />
+      <workItem from="1628785671021" duration="539000" />
+      <workItem from="1628959243252" duration="6301000" />
+      <workItem from="1628968476790" duration="703000" />
+      <workItem from="1629021416410" duration="3358000" />
+      <workItem from="1629029246144" duration="1134000" />
+      <workItem from="1629035084559" duration="6656000" />
+      <workItem from="1629128073184" duration="7452000" />
+      <workItem from="1629143976131" duration="2865000" />
+      <workItem from="1629198782084" duration="2806000" />
+      <workItem from="1629223819469" duration="262000" />
+      <workItem from="1629316717413" duration="5580000" />
+      <workItem from="1629569318146" duration="7682000" />
+      <workItem from="1629730206702" duration="4000" />
+      <workItem from="1629748308508" duration="11944000" />
+      <workItem from="1629799382993" duration="1732000" />
     </task>
     <servers />
   </component>

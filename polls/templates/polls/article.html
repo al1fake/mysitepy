@@ -1,6 +1,10 @@
 <!doctype html>
+{% extends 'polls/basic.html' %}
+
 {% load static %}
+{% load crispy_forms_tags %}
 {% load filter_tags %}
+{% block content %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -18,23 +22,12 @@
 <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+
       h2{
          font-size: 2rem;
       }
 
-      .center {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 50%;
-        }
+
       .wrapper {
         width: 300px;
         height: 400px;
@@ -56,53 +49,77 @@
           font-size: 3.5rem;
         }
       }
-    </style>
+      .card {
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 4px
+    }
 
-    
-    <!-- Custom styles for this template -->
+    .dots {
+        height: 4px;
+        width: 4px;
+        margin-bottom: 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block
+    }
+
+    .badge {
+        padding: 7px;
+        padding-right: 9px;
+        padding-left: 16px;
+        box-shadow: 5px 6px 6px 2px #e9ecef
+    }
+
+    .user-img {
+        margin-top: 4px
+    }
+
+    .check-icon {
+        font-size: 17px;
+        color: #c3bfbf;
+        top: 1px;
+        position: relative;
+        margin-left: 3px
+    }
+
+    .form-check-input {
+        margin-top: 6px;
+        margin-left: -24px !important;
+        cursor: pointer
+    }
+
+    .form-check-input:focus {
+        box-shadow: none
+    }
+
+    .icons i {
+        margin-left: 8px
+    }
+
+    .reply {
+        margin-left: 12px
+    }
+
+    .reply small {
+        color: #b7b4b4
+    }
+
+    .reply small:hover {
+        color: green;
+        cursor: pointer
+    }
+    </style>
     <link href="{% static 'product.css' %}" rel="stylesheet">
   </head>
   <body>
-    
-<header class="site-header sticky-top py-1">
-  <nav class="container d-flex flex-column flex-md-row justify-content-between">
-    <a class="py-2" href="#" aria-label="Product">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-    </a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
-  </nav>
-</header>
-
-
 <main>
-
- <!-- <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">{{question.article_text}}</h1>
-      <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-      <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-  </div>-->
-
-
-
-
 
 {% for question in latest_question_list %}
 
 {% if question.id == question_id %}
 
 {% with lst=question.article_text|split:"/n" lst2=question.article_img_link|split:"/n"  %}
-
-
 
 {% for i, z  in lst|zip1:lst2 %}
 
@@ -118,71 +135,56 @@
     <div class="wrapper exmpl">
       <img src="{{ z }}"style="width: 670px"></img>
 
-
-
-      <!-- <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
     </div>
   </div>
  {% endfor %}
-
-
   {% endwith %}{% endif %}
 {% endfor %}
 
-
-
 </main>
+    <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>
 
-<footer class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-      <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Features</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Cool stuff</a></li>
-        <li><a class="link-secondary" href="#">Random feature</a></li>
-        <li><a class="link-secondary" href="#">Team feature</a></li>
-        <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-        <li><a class="link-secondary" href="#">Another one</a></li>
-        <li><a class="link-secondary" href="#">Last time</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Resources</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Resource name</a></li>
-        <li><a class="link-secondary" href="#">Resource</a></li>
-        <li><a class="link-secondary" href="#">Another resource</a></li>
-        <li><a class="link-secondary" href="#">Final resource</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Resources</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Business</a></li>
-        <li><a class="link-secondary" href="#">Education</a></li>
-        <li><a class="link-secondary" href="#">Government</a></li>
-        <li><a class="link-secondary" href="#">Gaming</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>About</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Team</a></li>
-        <li><a class="link-secondary" href="#">Locations</a></li>
-        <li><a class="link-secondary" href="#">Privacy</a></li>
-        <li><a class="link-secondary" href="#">Terms</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+  <footer>
 
+<div class="container mt-5">
+{% if comment_form != 1 %}
+<form method="POST">
+    {{comment_form|crispy }}
+    <br>
+    {% csrf_token %}
+    <button class="btn btn-primary" type="submit">Отправить</button>
+    <input type="hidden" name="post" value="{{question_id}}">
+    <input type="hidden" name="name" value="{{name}}">
+</form>
+{% endif %}
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="headings d-flex justify-content-between align-items-center mb-3">
+                <h5>Комментарии</h5>
+{#                <div class="buttons"> <span class="badge bg-white d-flex flex-row align-items-center"> <span class="text-primary">Comments "ON"</span>#}
+{#                        <div class="form-check form-switch"> <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked> </div>#}
+{#                    </span> </div>#}
+            </div>
+            {% for comment in comments %}
+            <div class="card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="user d-flex flex-row align-items-center"><!-- <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2">--> <span><small class="font-weight-bold text-primary">{{ comment.name }}</small> <small class="font-weight-bold">{{ comment.body}}</small></span> </div> <small>2 days ago</small>
+                </div>
+{#                <div class="action d-flex justify-content-between mt-2 align-items-center">#}
+{#                    <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>#}
+{#                    <div class="icons align-items-center"> <i class="fa fa-star text-warning"></i> <i class="fa fa-check-circle-o check-icon"></i> </div>#}
+{#                </div>#}
+            </div>
+            {%  endfor %}
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
+        </div>
+    </div>
+</div>
+  </footer>
   </body>
 </html>
+
+{% endblock %}
+
+
+

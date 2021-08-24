@@ -1,0 +1,28 @@
+{% block content %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+    <style>
+    div {
+        width: 70%;
+    }
+		.centered {
+		  position: absolute;
+
+		  left: 30%;
+        }
+    </style>
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+<div class="centered">
+	<h1>Регистрация</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}
+        <br>
+		<button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+	</form>
+	<p class="text-center">Уже есть аккаунт? <a href="/polls/login">Войти.</a></p>
+</div>
+
+{% endblock %}
