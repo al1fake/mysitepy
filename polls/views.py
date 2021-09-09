@@ -1,14 +1,20 @@
-import django.urls
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import Question, Comment
-from django.template import loader
-from django.urls import include, path
-from .forms import NewUserForm, NewCommentForm
+import datetime
+import logging
+import asyncio
+
 from django.contrib import messages
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth import logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import render, redirect
+from django.template import loader
+
+from mysite.settings import LOGGING_LEVEL
+from .forms import NewUserForm, NewCommentForm
+from .models import Question, Comment
+
+logging.basicConfig(filename='comment.log', level=LOGGING_LEVEL)
+
 
 def index(request):
     # if request.user.is_authenticated:
@@ -22,6 +28,7 @@ def index(request):
 
 
 def detail(request, question_id):
+
     latest_question_list = Question.objects.order_by('-pub_date')[:9]
     if request.user.is_authenticated:
         name = request.user.username
@@ -29,13 +36,19 @@ def detail(request, question_id):
 
         if request.method == 'POST':
             comment_form = NewCommentForm(data=request.POST)
-
+            loop = asyncio.new_event_loop()
             if comment_form.is_valid():
                 new_comment = comment_form.save()
                 new_comment.save()
+                loop.run_until_complete(log_to_file(True, question_id, name))
+                # logging.debug('added comment by ' + name + ' on post with id ' + str(question_id) + '[' +
+                #               str(datetime.date.today()) + ' ' + str(datetime.datetime.now().time()) + ']')
                 return redirect('/polls/'+str(question_id))
-            print(request.user.username)
-            print(comment_form.errors.as_data())
+            else:
+                loop.run_until_complete(log_to_file(False, question_id, name))
+                # logging.debug('error while creating comment by ' + name + ' on post with id ' + str(question_id) + '['
+                # + str(datetime.date.today()) + ' ' + str(datetime.datetime.now().time()) + ']')
+            loop.close()
 
     else:
         comment_form = 1
@@ -55,9 +68,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, "Registration successful.")
-            return redirect("")
-        messages.error(request, "Unsuccessful registration. Invalid information.")
+            return redirect("/polls")
     form = NewUserForm()
     return render(request=request, template_name="polls/reg.html", context={"register_form": form})
 
@@ -92,3 +103,12 @@ def success(request):
 def logout_view(request):
     logout(request)
     return redirect("/polls")
+
+
+async def log_to_file(is_successful, question_id, name):
+    if is_successful:
+        logging.info('added comment by ' + name + ' on post with id ' + str(question_id) + '[' +
+                      str(datetime.date.today()) + ' ' + str(datetime.datetime.now().time()) + ']')
+    else:
+        logging.info('error while creating comment by ' + name + ' on post with id ' + str(question_id) + '[' +
+                      str(datetime.date.today()) + ' ' + str(datetime.datetime.now().time()) + ']')
