@@ -2,8 +2,9 @@ version: '3'
 
 services:
   web:
-    build: ./web
-    command: python manage.py runserver 0.0.0.0:8000
+    build: .
+    image: qertyy/mysite:hub
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/web_django
     ports:
@@ -13,12 +14,12 @@ services:
   db:
     image: mysql:5.7
     ports:
-      - '3306:3306'
+      - '3307:3306'
     environment:
-      MYSQL_DATABASE: 'db_django'
-      MYSQL_USER: 'root'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: 'articles'
+      MYSQL_USER: 'fordjango'
+      MYSQL_PASSWORD: '418284qty'
+      MYSQL_ROOT_PASSWORD: '418284qty'
     restart: always
     volumes:
       - ./db_django:/var/lib/mysql

@@ -1,5 +1,6 @@
-FROM python:3.9
+FROM python:3.8
 ENV PYTHONUNBUFFERED 1
+ENV DB_HOST db
 RUN mkdir /web_django
 WORKDIR /web_django
 COPY requirements.txt /web_django/

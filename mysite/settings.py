@@ -85,9 +85,10 @@ DATABASES = {
     'default': {
         'NAME': 'articles',
         'ENGINE': 'django.db.backends.mysql',
-        'USER': 'root',
-        'PASSWORD': '418284qtY',
-        'HOST': 'localhost',
+        'USER': 'fordjango',
+        'PASSWORD': '418284qty',
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
 
