@@ -22,12 +22,13 @@ class Comment(models.Model):
     name = models.CharField(max_length=80)
     #email = models.EmailField()
     body = models.CharField('Оставьте комментарий', max_length=80)
-    created = models.DateTimeField(auto_now_add=True)
+    user_id = models.IntegerField(default=1)
+    # created = models.DateTimeField(auto_now_add=True)
     #updated = models.DateTimeField(auto_now=True)
-    active = models.BooleanField(default=True)
+    # active = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ('created',)
+        ordering = ('post',)
 
     def __str__(self):
         return 'Comment by {} on {}'.format(self.name, self.post)

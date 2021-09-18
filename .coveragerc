@@ -1,0 +1,10 @@
+[run]
+omit =
+    # omit anything in a .local directory anywhere
+    */templates/*
+    */venv/*
+    */migrations/*
+    # omit everything in /usr
+    /usr/*
+    # omit this single file
+    */__init__.py

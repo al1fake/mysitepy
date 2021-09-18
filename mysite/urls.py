@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
 
+from polls import views
+
+router = routers.DefaultRouter()
+router.register(r'comments', views.CommentViewSet)
+router_polls = routers.DefaultRouter()
+router_polls.register(r'main1', views.IndexViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
+    path('api/', include(router.urls)),
+    path('main/', include(router_polls.urls)),
+
 ]

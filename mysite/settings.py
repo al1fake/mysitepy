@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
     'crispy_forms',
-
+    'rest_framework',
+    'django_filters',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -85,8 +87,8 @@ DATABASES = {
     'default': {
         'NAME': 'articles',
         'ENGINE': 'django.db.backends.mysql',
-        'USER': 'fordjango',
-        'PASSWORD': '418284qty',
+        'USER': 'root',
+        'PASSWORD': '418284qtY',
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '3306'),
     }
@@ -111,7 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

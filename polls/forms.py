@@ -23,8 +23,8 @@ class NewCommentForm(forms.ModelForm):
 
 	class Meta:
 		model = Comment
-		fields = ('post', 'body', 'name')
-		widgets = {'post': forms.HiddenInput(), 'name': forms.HiddenInput()}
+		fields = ('post', 'body', 'name', 'user_id')
+		widgets = {'post': forms.HiddenInput(), 'name': forms.HiddenInput(), 'userid': forms.HiddenInput()}
 
 	# def save(self, commit=True):
 	# 	comment = super(NewCommentForm, self).save(commit=False)

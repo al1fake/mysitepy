@@ -278,3 +278,397 @@ WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /
 WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /admin/login/
 WARNING:django.request:Not Found: /pols
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /api
+WARNING:django.request:Not Found: /polls/api
+WARNING:django.request:Not Found: /polls/api/
+INFO:django.utils.autoreload:C:\mysite\polls\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\urls.py changed, reloading.
+WARNING:django.request:Not Found: /polls/api
+WARNING:django.request:Not Found: /polls/api/
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+ERROR:django.request:Internal Server Error: /polls/api/
+Traceback (most recent call last):
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\mysite\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\mysite\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 680, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 413, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "C:\mysite\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Question is not JSON serializable
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /polls/api/
+Traceback (most recent call last):
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\mysite\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\mysite\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 680, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 413, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "C:\mysite\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 439, in _iterencode
+    yield from _iterencode(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Comment is not JSON serializable
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /polls/api/
+Traceback (most recent call last):
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\mysite\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\mysite\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 680, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 413, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "C:\mysite\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+WARNING:django.request:Not Found: /
+ERROR:django.request:Internal Server Error: /polls/api/
+Traceback (most recent call last):
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\mysite\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\mysite\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 680, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 413, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "C:\mysite\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.9_3.9.2032.0_x64__qbz5n2kfra8p0\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /apiu
+ERROR:django.request:Internal Server Error: /api/comments/
+Traceback (most recent call last):
+  File "C:\mysite\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "C:\mysite\venv\lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\mysite\venv\lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'question-detail' not found. 'question-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\mysite\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\mysite\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "C:\mysite\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "C:\mysite\venv\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\mysite\venv\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "question-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+ERROR:django.request:Internal Server Error: /api/comments/
+Traceback (most recent call last):
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\mysite\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\mysite\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\mysite\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 724, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 702, in get_context
+    'filter_form': self.get_filter_form(data, view, request),
+  File "C:\mysite\venv\lib\site-packages\rest_framework\renderers.py", line 634, in get_filter_form
+    html = backend().to_html(request, queryset, view)
+  File "C:\mysite\venv\lib\site-packages\django_filters\rest_framework\backends.py", line 103, in to_html
+    template = loader.get_template(self.template)
+  File "C:\mysite\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: django_filters/rest_framework/crispy_form.html
+INFO:django.utils.autoreload:C:\mysite\mysite\settings.py changed, reloading.
+WARNING:django.request:Bad Request: /api/comments/
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Forbidden: /api/
+WARNING:django.request:Forbidden: /api/comments/
+INFO:django.utils.autoreload:C:\mysite\polls\models.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\models.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\forms.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /
+INFO:root:added comment by admin on post with id 1[2021-09-14 20:06:50.894432]
+INFO:root:added comment by qertyy on post with id 1[2021-09-14 20:07:47.101325]
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /api/comments/45/
+WARNING:django.request:Not Found: /api/45
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\mysite\settings.py changed, reloading.
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+WARNING:django.request:Forbidden: /api/comments/
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\mysite\polls\views.py changed, reloading.

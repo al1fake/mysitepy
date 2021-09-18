@@ -1,19 +1,33 @@
+import asyncio
 import datetime
 import logging
-import asyncio
-
+from django.views.generic import TemplateView
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import status
+from rest_framework.exceptions import NotFound
+from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
 
 from mysite.settings import LOGGING_LEVEL
 from .forms import NewUserForm, NewCommentForm
 from .models import Question, Comment
+from .serializers import CommentSerializer
 
 logging.basicConfig(filename='comment.log', level=LOGGING_LEVEL)
+
+
+class IndexViewSet(TemplateView):
+    def get(self, request):
+        article_data = Question.objects.order_by('-pub_date')[:9]
+        template = loader.get_template('polls/index.html')
+        context = {'latest_question_list': article_data}
+        return render(request, 'polls/index.html', context)
 
 
 def index(request):
@@ -25,6 +39,27 @@ def index(request):
     template = loader.get_template('polls/index.html')
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
+
+
+class CommentViewSet(ModelViewSet):
+
+    serializer_class = CommentSerializer
+    queryset = Comment.objects.order_by('-id')
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['post', 'name']
+    # def get(self, request):
+    #     articles = Comment.objects.order_by('-id')
+    #     serialized = CommentSerializer(articles, many=True)
+    #     return Response({'articles': serialized})
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        if instance.user_id == request.user.id or request.user.is_superuser:
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            raise NotFound('Comment not found')
+
 
 
 def detail(request, question_id):
@@ -58,7 +93,7 @@ def detail(request, question_id):
 
     template = loader.get_template('polls/article.html')
     context = {'latest_question_list': latest_question_list, 'question_id': question_id, 'comments': comments,
-               'comment_form': comment_form, 'name': name}
+               'comment_form': comment_form, 'name': name, 'userid': request.user.id}
     return render(request, 'polls/article.html', context)
 
 

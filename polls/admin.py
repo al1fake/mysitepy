@@ -6,9 +6,8 @@ admin.site.register(Question)
 
 class CommentAdmin(admin.ModelAdmin):
     #list_display = ('name', 'email', 'post', 'created', 'active')
-    list_display = ('name', 'post', 'active')
+    list_display = ('name', 'post')
     #list_filter = ('active', 'created', 'updated')
-    list_filter = ('active',)
     #search_fields = ('name', 'email', 'body')
     search_fields = ('name', 'body')
 
